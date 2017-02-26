@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'shortener',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -127,3 +129,5 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = path.join(path.dirname(BASE_DIR), 'static')
+
+SHORTENER_DOMAIN = 'http://localhost:8000/shortener'
