@@ -6,8 +6,7 @@ class BaseConverter(object):
     BASE62 = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
     def encode(self, num):
-        """
-        Encode a positive number in Base X
+        """Encode a positive number in Base X
 
         Arguments:
         - `num`: The number to encode
@@ -25,8 +24,7 @@ class BaseConverter(object):
         return ''.join(arr)
 
     def decode(self, text):
-        """
-        Decode a Base X encoded string into the number
+        """Decode a Base X encoded string into the number
 
         Arguments:
         - `string`: The encoded string
