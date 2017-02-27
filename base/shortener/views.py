@@ -22,7 +22,7 @@ class UrlRedirect(generic.RedirectView):
             raise Http404
 
         object = self.get_object(pk)
-        return object['link_url']
+        return object.link_url
 
     def get_object(self, pk):
         try:
