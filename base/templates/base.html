@@ -1,0 +1,41 @@
+{% load i18n %}
+{% load static from staticfiles %}
+{% load compress %}
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  {% block metas %}
+  {% endblock metas %}
+  <link rel="icon" href="{% static "favicon.ico" %}">
+  <title>{% block title %}{% endblock title %}</title>
+
+  {% compress css %}
+    {% block styles %}
+      <link href="{% static "vendors/bootstrap-3.3.7/css/bootstrap.min.css" %}" rel="stylesheet">
+    {% endblock styles %}
+    {% block extrastyles %}
+    {% endblock extrastyles %}
+  {% endcompress css %}
+
+  {% compress js %}
+    {% block scripts %}
+      <script src="{% static "vendors/jquery/jquery-1.12.4.min.js" %}" type="text/javascript" charset="utf-8"></script>
+      <script src="{% static "vendors/bootstrap-3.3.7/js/bootstrap.min.js" %}" type="text/javascript" charset="utf-8"></script>
+    {% endblock scripts %}
+  {% endcompress js %}
+
+</head>
+<body class="{% block bodyclass %}{% endblock bodyclass %}">
+  {% include "partials/ga.html" %}
+  {% block content %}
+  {% endblock content %}
+
+  {% block extrascripts %}
+  {% endblock extrascripts %}
+
+  {% block tracking %}
+  {% endblock tracking %}
+</body>
+</html>
