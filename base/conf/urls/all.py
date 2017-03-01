@@ -22,4 +22,5 @@ from django.contrib import admin
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^shortener/', include('shortener.urls', namespace='shortener')),
+    url(r'^api/', include('api.urls', namespace='api')),
 ]
