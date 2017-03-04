@@ -3,11 +3,11 @@ from __future__ import unicode_literals
 
 from django.conf.urls import url, include
 from rest_framework import routers
-from .views import ShortenerListViewset
+from .views import ShortenerViewset
 
 
 router = routers.DefaultRouter()
-router.register(r'shortener', ShortenerListViewset)
+router.register(r'^url', ShortenerViewset)
 
 urlpatterns = [
     url(r'^', include(router.urls)),
